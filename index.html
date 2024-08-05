@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    width: 816px;
+    height: 1056px;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+  }
+
+  .badge-container {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 10px;
+    margin: 0 5px;
+    margin-bottom: 5px;
+  }
+  .badge-icon {
+    flex: 1;
+    height: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 7px;
+    margin: 4px;
+  }
+  .badge-icon img {
+    height: 100%;
+    margin-right: 8px;
+  }
+  .badge-icon span {
+    text-wrap: nowrap;
+    font-size: 0.7rem;
+    color: white;
+  }
+
+
+  aside,
+  main {
+    margin-top: 5px;
+    margin-top: 145px;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  aside {
+    width: 29%;
+    margin-right: 5px;
+    margin-left: 20px;
+    float: left;
+    background-color: #F2F2F2;
+    border-radius: 5px;
+  }
+  .education-section div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    width: 63%;
+    margin-right: 20px;
+    float: right;
+  }
+  main h3 {
+    padding:  0 0 5px 0;
+    margin: 0;
+  }
+  .professional-summary {
+    padding-bottom: 28px;
+  }
+  .work-experience-section {
+    width: 100%;
+  }
+  .work-experience-section h5,
+  .work-experience-section h6 {
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+  }
+  .work-experience-section ul {
+    font-size: small;
+    text-align: left;
+    margin-top: 0;
+    list-style-position: outside;
+    padding-left: 0px;
+    margin-bottom: 0;
+    columns: 2;
+    column-gap: 30px;
+    list-style-type: none;
+  }
+  .work-experience-section li {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-left: 5px;
+  }
+  .other-work-experience {
+    margin-top: 28px;
+  }
+
+  .img-container {
+    position: absolute; z-index: 1;
+    left: 75px; top: 5px;
+    width: 110px;
+    height: 110px;
+
+    overflow: hidden;
+    border-radius: 50%;
+    border: 10px solid #967E5A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EBF0FB;
+  }
+  .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .exp-card {
+    position: relative;
+    padding: 5px 0;
+  }
+  .exp-card-break {
+    padding: 0;
+  }
+  .exp-card-break:last-child {
+    padding-top: 5px;
+    padding-bottom: 0;
+  }
+  .exp-break-card {
+    position: relative;
+    padding: 5px;
+    border: 2px solid #3594BA;
+    border-radius: 5px;
+  }
+  .exp-break-card ul {
+    margin-bottom: 0;
+  }
+  .exp-card-title {
+    display: flex; 
+    align-items: flex-end; 
+    justify-content: space-between;
+    margin-bottom: 2px;
+  }
+  .exp-card-title-detail {
+    display: flex;
+    align-items: end;
+  }
+  .exp-card-title-detail h5 {
+    margin-right: 4px;
+    color: #28A4B3
+  }
+  .exp-card-title-detail span {
+    font-size: 12px;
+    margin-left: 4px;
+    font-weight: bold;
+    color: #967E5A;
+  }
+  .exp-card-title sub {
+    font-size: small;
+    color: #515151;
+    margin-left: 5px;
+  }
+  .exp-card-subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: flex;
+  }
+  .exp-card-subtitle span {
+    color: #7F7F7F;
+    font-size: 10px;
+  }
+  .exp-tasks-container {
+    font-size: small;
+    text-align: left;
+    margin-top: 0;
+    padding-left: 0px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .exp-task {
+    /* border: 1px solid #F2F2F2; */
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 1px 0 3px 0;
+    background-color: #F2F2F2;
+  }
+
+  #break-tooltip {
+    position: absolute;
+    right: 10px;
+    top: -12px;
+    font-size: x-small;
+    z-index: 1;
+    background-color: white;
+    padding: 4px;
+    font-weight: bold;
+    color: #3594BA;
+  }
+
+  .section-title {
+    color: #967E5A;
+  }
+</style>
+<body>
+  <header>
+    <div 
+      style="display: flex; align-items: center; justify-content: end; margin: 0px;"
+    >
+      <div id="profile-container" style="display: flex; flex-direction: row; justify-content: end;">
+        <div class="img-container">
+          <img src="assets/profile.png" alt="Walter Bernal">
+        </div>
+      </div>
+      <div style="background-color: #967E5A; width: 80%; height: 90px; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-evenly; position: absolute; top: 24px; margin-right: 20px; border-radius: 10px;">
+        <h1 style="margin: 0 10px; color: #FFF;">WALTER ELI BERNAL MONTERO</h1>
+        <h3 style="margin: 0 10px; color: #FFF;">SENIOR SUPPLIER QUALITY ENGINEER</h3>
+      </div>
+    </div>
+  </header>
+
+  <aside>
+    <section class="badge-container" style="padding-top: 0px;">
+      <h3 class="section-title" style="padding-left: 5px; text-align: start; margin: 10px 0; width: 100%; margin-top: 5px;">CONTACT</h3>
+      <div style="font-size: small; margin-left: 5px;">
+        <div vstyle="list-style: none; padding: 0; margin-top: 0; margin-bottom: 5;">
+          <div style="margin-bottom: 5px;">
+            <span style="font-weight: 600; color: #28A4B3;">Phone:</span> (+52) 311 204 0450
+          </div>
+          <div style="margin-bottom: 5px;">
+            <span style="font-weight: 600; color: #28A4B3;">Email:</span> wltrbm@gmail.com
+          </div>
+          <div>
+            <span style="font-weight: 600; color: #28A4B3;">Location:</span> Guadalajara, Jalisco
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="badge-container education-section">
+      <h3 class="section-title" style="padding-left: 5px; margin: 10px 0">EDUCATION</h3>
+      <div style="margin-left: 5px;">
+        <div style="font-size: small;">
+          <div style="padding: 0; margin-top: 0; margin-bottom: 8px;">
+            <div style="color: #28A4B3; font-weight: 600;">Master in Quality Management</div>
+            <div>Universidad del Valle de Mexico</div>
+            <div>2019 - 2021</div>
+          </div>
+        </div>
+        <div style="font-size: small;">
+          <div style="padding: 0; margin-top: 0;">
+            <div style="color: #28A4B3; font-weight: 600;">Bachelor in Electornic Engineering</div>
+            <div>Universidad Autonoma de Nayarit</div>
+            <div>2011 - 2016</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="badge-container">
+      <h3 class="section-title" style="padding-left: 5px; text-align: start; margin:5px 0; margin-bottom: 10px; width: 100%;">SKILLS &amp; ABILITIES</h3>
+      <div class="badge-icon" style="background-color: #1980B5;">
+        <img src="https://www.aiag.org/Content/Frameworks/Custom/aiag/images/structure/aiag-white.png" alt="aiag" >
+        <span>APQP</span>
+      </div>
+      <div class="badge-icon" style="background-color: #1980B5;">
+        <img src="https://www.aiag.org/Content/Frameworks/Custom/aiag/images/structure/aiag-white.png" alt="aiag" >
+        <span>PPAP</span>
+      </div>
+      <div class="badge-icon" style="background-color: #1980B5;">
+        <img src="https://www.aiag.org/Content/Frameworks/Custom/aiag/images/structure/aiag-white.png" alt="aiag" >
+        <span>Control Plan</span>
+      </div>
+      <div class="badge-icon" style="background-color: #1980B5;">
+        <img src="https://www.aiag.org/Content/Frameworks/Custom/aiag/images/structure/aiag-white.png" alt="aiag" >
+        <span>MSA</span>
+      </div>
+      <div class="badge-icon" style="background-color: #1980B5;">
+        <img src="https://www.aiag.org/Content/Frameworks/Custom/aiag/images/structure/aiag-white.png" alt="aiag" >
+        <span>SPC</span>
+      </div>
+      <div class="badge-icon" style="background: linear-gradient(to right, #D42C31 50%, #2B4693 50%);">
+        <img src="https://www.aiag.org/Content/Frameworks/Custom/aiag/images/structure/aiag-white.png" alt="aiag" >
+        <span>FMEA</span>
+      </div>
+      <div class="badge-icon" style="background-color: #013B6E;">
+        <img src="https://static.wixstatic.com/media/a66843_d1f0caa8594344a08cc3bfdf2304fd5b~mv2.gif" alt="iatf-16949" >
+        <span>IATF 16949</span>
+      </div>
+      <div class="badge-icon" style="background-color: #4C4C4C;">
+        <img src="https://www.aiag.org/Content/Frameworks/Custom/aiag/images/structure/aiag-white.png" alt="cqi-19" >
+        <span>CQI-19</span>
+      </div>
+      <div class="badge-icon" style="background-color: #a44343">
+        <img src="assets/vda6.3.png" alt="vda" style="filter: brightness(1) contrast(100%) contrast(100%);">
+        <span>Process Audit</span>
+      </div>
+      <div class="badge-icon" style="background-color: #FFFFFF;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP" style="margin-right: 0 !important">
+      </div>
+      <div class="badge-icon" style="background-color: #ffffff;">
+        <img src="assets/IMDS.png" alt="imds" style="height: 90%;">
+        <span style="color: #2C3586;">v.12</span>
+      </div>
+      <div class="badge-icon" style="background-color: #FFFFFF;">
+        <img src="https://cdn.worldvectorlogo.com/logos/iso-31.svg" alt="iso">
+        <span style="color: #006BB6;">19011</span>
+      </div>
+      <div class="badge-icon" style="background-color: #FFFFFF">
+        <img src="https://leadrp.net/wp-content/uploads/2022/09/GDT-900x600.jpg" alt="GD&T">
+        <span style="color: #176181;">GD&T</span>
+      </div>
+      <div class="badge-icon" style="background-color: #0E7C41;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" />
+        <span>Excel</span>
+      </div>
+      <div class="badge-icon" style="background-color: #293B51;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Minitab_Logo.svg" />
+        <span>Minitab</span>
+      </div>
+      <div class="badge-icon" style="background-color: #0A5F9C;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" />
+        <span>Matlab</span>
+      </div>
+      <div class="badge-icon" style="background-color: #FFFFFF;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHZU1HgsLw0d1OF0PFPptM3wdVgPFg80Izgg&s" alt="advanced-statistics">
+        <span style="color: #015F6F">Advanced Statistics</span>
+      </div>
+      <div class="badge-icon" style="background-color: #bd6303">
+        <img src="https://www.svgrepo.com/show/3864/team.svg" alt="advanced-statistics" style="filter: brightness(0) invert(1)grayscale(100%) contrast(100%);">
+        <span style="color: #FFFFFF">Team Leadership</span>
+      </div>
+      <div class="badge-icon" style="background-color: #7a019b">
+        <img src="https://cdn-icons-png.flaticon.com/512/4249/4249179.png" alt="advanced-statistics" style="filter: brightness(0) invert(1)grayscale(100%) contrast(100%);">
+        <span style="color: #FFFFFF">Supplier Quality Management</span>
+      </div>
+      <div class="badge-icon" style="background-color: #161B22;">
+        <img src="https://www.svgrepo.com/show/1699/web-development.svg" alt="web-dev"  style="filter: brightness(0) invert(1)grayscale(100%) contrast(100%);">
+        <span>Web Dev</span>
+      </div>
+      <div class="badge-icon" style="background-color: #161B22;">
+        <img src="https://cdn-icons-png.flaticon.com/512/7075/7075373.png" alt="mobile-dev"  style="filter: brightness(0) invert(1)grayscale(100%) contrast(100%);">
+        <span>Mobile Dev</span>
+      </div>
+    </section>
+
+    <section class="badge-container">
+      <h3 class="section-title" style="padding-left: 5px; text-align: start; margin: 10px 0; width: 100%">LANGUAGES</h3>
+      <div class="badge-icon" style="background-color: #022169a0;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/2560px-Flag_of_the_United_Kingdom_%283-5%29.svg.png" alt="language">
+        <span>Business Proficiency</span>
+      </div>
+      <div class="badge-icon" style="background-color: #ae0e11a0;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/2560px-Flag_of_Spain.svg.png" alt="advanced-statistics">
+        <span>Native Proficiency</span>
+      </div>
+    </section>
+  </aside>
+
+  <main>
+    <section class="professional-summary">
+      <h3 class="section-title" style="margin-top: 0; margin-bottom: 5px;">SUMMARY</h3>
+      <div style="font-size: small; text-align: justify;">
+        I'm a results-driven Senior Supplier Quality Engineer with 6 years of experience in ensuring supplier compliance, product complaince, quality standards, and process improvements. Proven track record in managing supplier relationships, conducting audits, and implementing quality control measures. Recently expanded technical skills in software development, enhancing analytical and problem-solving abilities, increasing the solutions portfolio for Quality Management Systems sustainability.
+      </div>
+    </section>
+    
+
+    <section class="work-experience-section">
+      <h3 class="section-title" style="margin-bottom: 5px;">EXPERIENCE</h3>
+
+      <div class="exp-card">
+        <div class="exp-card-title">
+          <div class="exp-card-title-detail">
+            <h5>Senior Supplier Quality Engineer</h5>
+            <div>|</div>
+            <span>IMI Mexico</span>
+          </div>
+          <div class="exp-card-subtitle">
+            <span>Full-Time | <b>03/2022 - 12/2022</b></span>
+          </div>
+        </div>
+        <div class="exp-tasks-container">
+          <div class="exp-task">Supplier Quality Assurance Supervisor</div>
+          <div class="exp-task">Supplier Corrective Action Lead</div>
+          <div class="exp-task">Supplier Performance Evaluation</div>
+          <div class="exp-task">Supplier Audits by VDA 6.3: 2016</div>
+          <div class="exp-task">Audit Planification Management</div>
+          <div class="exp-task">Production Parts Approval</div>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-card-title">
+          <div class="exp-card-title-detail">
+            <h5>Senior Supplier Quality Engineer</h5>
+            <div>|</div>
+            <span>Minth Mexico</span>
+          </div>
+          <div class="exp-card-subtitle">
+            <span>Full-Time | <b>09/2021 - 02/2022</b></span>
+          </div>
+        </div>
+        <div class="exp-tasks-container">
+          <div class="exp-task">Supplier Corrective Action Lead</div>
+          <div class="exp-task">Supplier Performance Evaluation</div>
+          <div class="exp-task">Supplier Audits by VDA 6.3: 2016</div>
+          <div class="exp-task">Production Parts Approval</div>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-card-title">
+          <div class="exp-card-title-detail">
+            <h5>Senior Supplier Quality Engineer</h5>
+            <div>|</div>
+            <span>IEE Sensing</span>
+          </div>
+          <div class="exp-card-subtitle">
+            <span>Full-Time | <b>08/2019 - 08/2021</b></span>
+          </div>
+        </div>
+        <div class="exp-tasks-container">
+          <div class="exp-task">Incoming Inspection Supervisor</div>
+          <div class="exp-task">Supplier Audits by VDA 6.3: 2016</div>
+          <div class="exp-task">Production Parts Approval</div>
+          <div class="exp-task">Material Data Sheet Approval (IMDS)</div>
+          <div class="exp-task">Supplier Performance Evaluation</div>
+          <div class="exp-task">Supplier Corrective Action Lead</div>
+          <div class="exp-task">SAP QM for Incoming Materials</div>
+          <div class="exp-task">Part Dimensional Statistical Analysis</div>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-card-title">
+          <div class="exp-card-title-detail">
+            <h5>Supplier Quality Engineer</h5>
+            <div>|</div>
+            <span>CPI Mexico</span>
+          </div>
+          <div class="exp-card-subtitle">
+            <span>Full-Time | <b>03/2019 - 08/2019</b></span>
+          </div>
+        </div>
+        <div class="exp-tasks-container">
+          <div class="exp-task">Supplier Corrective Action Lead</div>
+          <div class="exp-task">Supplier Performance Evaluation</div>
+          <div class="exp-task">Supplier Audits by ISO 9001: 2015</div>
+          <div class="exp-task">Production Parts Approval</div>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-card-title">
+          <div class="exp-card-title-detail">
+            <h5>Supplier Quality Engineer</h5>
+            <div>|</div>
+            <span>Lite On Mexico</span>
+          </div>
+          <div class="exp-card-subtitle">
+            <span>Full-Time | <b>02/2018 - 02/2019</b></span>
+          </div>
+        </div>
+        <div class="exp-tasks-container">
+          <div class="exp-task">Incoming Inspection Supervisor</div>
+          <div class="exp-task">Production Parts Approval</div>
+          <div class="exp-task">Supplier Corrective Action Lead</div>
+          <div class="exp-task">Supplier Audits by VDA 6.3: 2016</div>
+          <div class="exp-task">Internal Auditor by IATF 16949: 2016</div>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-card-title">
+          <div class="exp-card-title-detail">
+            <h5>Reliability Engineer</h5>
+            <div>|</div>
+            <span>Lite On Mexico</span>
+          </div>
+          <div class="exp-card-subtitle">
+            <span>Full-Time | <b>01/2017 - 02/2018</b></span>
+          </div>
+        </div>
+        <div class="exp-tasks-container">
+          <div class="exp-task">Calibrations Area Management</div>
+          <div class="exp-task">Realiability Laboratory Management</div>
+          <div class="exp-task">Parts Failure Analysis in PPAP stage</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="work-experience-section other-work-experience">
+      <h3 class="section-title" style="margin-bottom: 5px;">OTHER EXPERIENCE</h3>
+
+      <div class="exp-break-card">
+        <div id="break-tooltip">Career Break &amp; Enhancement Period</div>
+        <div class="exp-card exp-card-break">
+          <div class="exp-card-title">
+            <div class="exp-card-title-detail">
+              <h5>Software Developer</h5>
+              <div>|</div> 
+              <span>Grupo Tecnologico BWL</span>
+            </div>
+            <div class="exp-card-subtitle">
+              <span>Contract | <b>10/2023 - Present</b></span>
+            </div>
+          </div>
+          <div class="exp-tasks-container">
+            <div class="exp-task">Front-End Software Development</div>
+            <div class="exp-task">Back-End Software Development</div>
+            <div class="exp-task">Mobile Software Development</div>
+          </div>
+        </div>
+        <div class="exp-card exp-card-break">
+          <div class="exp-card-title">
+            <div class="exp-card-title-detail">
+              <h5>Freelance Software Developer</h5>
+            </div>
+            <div class="exp-card-subtitle">
+              <span>Part-Time | <b>09/2023 - Present</b></span>
+            </div>
+          </div>
+          <div class="exp-tasks-container">
+            <div class="exp-task">Front-End Software Development</div>
+            <div class="exp-task">Back-End Software Development</div>
+            <div class="exp-task">Mobile Software Development</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
