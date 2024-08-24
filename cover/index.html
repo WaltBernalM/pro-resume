@@ -4,33 +4,156 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cover Letter</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    html {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      height: 1100px;
+      width: 850px;
+      position: absolute;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    header {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 80px !important;
+    }
+
+    header h1 {
+      margin-bottom: 0;
+    }
+
+    header,
+    main,
+    footer {
+      margin: 0 30px;
+    }
+
+    main,
+    footer {
+      font-size: 16px;
+    }
+
+    main {
+      text-align: justify;
+    }
+
+    footer {
+      margin-bottom: 20%;
+    }
+
+    h3 {
+      font-weight: 500;
+    }
+
+    #banner {
+      background-color: #967E5A;
+      height: 20px;
+      width: 100%;
+    }
+
+    #title-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    #location h3 {
+      margin: 0;
+    }
+
+    #base-info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    #base-info h3 {
+      margin: 0;
+    }
+
+    #spacer {
+      margin: 0 10px;
+    }
+
+    input {
+      border: none;
+      border-bottom: 1px #f1f1f1;
+      border-bottom-style: ridge;
+      font-size: 16px;
+    }
+
+    #text-measurer {
+      position: absolute;
+      visibility: hidden;
+      white-space: nowrap;
+      font-size: 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .separator {
+      margin: 20px 0;
+      border: none;
+      height: 10px;
+      background-color: #967E5A;
+      width: 15%;
+    }
+
+    #contact-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 70%;
+    }
+  </style>
 </head>
 <body>
   <header>
     <div id="banner"></div>
-    <h1>WALTER ELI BERNAL MONTERO</h1>
-    <div id="location">
-      <h3>Guadalajara, Jalisco</h3>
-    </div>
-    <div id="base-info">
-      <h3>
-        (+52) 311 204 0450
-      </h3>
-      <div id="spacer">|</div>
-      <h3>wltrbm@gmail.com</h3>
+    <div id="title-container">
+      <div class="separator"></div>
+      <div id="contact-info">
+        <h1>WALTER ELI BERNAL MONTERO</h1>
+        <div id="location">
+          <h3>Guadalajara, Jalisco</h3>
+        </div>
+        <div id="base-info">
+          <h3>(+52) 311 204 0450</h3>
+          <div id="spacer">|</div>
+          <h3>wltrbm@gmail.com</h3>
+        </div>
+      </div>
+      <div class="separator"></div>
     </div>
   </header>
   <main>
     <p>Dear Hiring Manager,</p>
+    <br/>
     <p>
-      I am writing to express my interest in this job opportunity. With six years of experience in Quality Manufacturing, including five focused on Supplier Quality across various industries, I have established a proven track record in ensuring product quality, driving process improvements, and building strong supplier relationships. My expertise in supplier evaluations, corrective actions, and adherence to industry standards has consistently contributed to the success of the organizations I have supported.
+      I am writing to express my interest for this job opportunity as <input placeholder="Position Name" type="text" name="positionName" id="positionName" onchange="handleInputChange(event, 'positionName')"> in <input placeholder="Company Name" type="text" name="companyName" id="companyName" onchange="handleInputChange(event, 'companyName')">. With six years of experience in Quality Manufacturing, including five focused on Supplier Quality across various industries, I have established a proven track record in ensuring product quality, driving process improvements, and building strong supplier relationships. My expertise in supplier evaluations, corrective actions, and adherence to industry standards has consistently contributed to the success of the organizations I have supported.
     </p>
+    <div id="text-measurer"></div>
+
     <p>
       Throughout my career, I have taken on key roles in managing supplier quality through detailed planning, production part approvals, and the execution of corrective actions. I have developed strong familiarity with AIAG, VDA, and IATF 16949 standards, consistently ensuring suppliers meet rigorous quality expectations. I also led initiatives to improve the accuracy and efficiency of incoming inspections and manufacturing processes by utilizing tools like basic quality tools and statistical analysis techniques.
     </p>
     <p>
-      fter refining my technical expertise in supplier quality, I expanded my skill set into software development. This has enabled me to create and implement solutions that automate tasks, simplify processes, and standardize operations—adding significant value to my Supplier Quality Engineer duties by enabling me to perform my job more efficiently. My ability to apply analytical and problem-solving capabilities across front-end, back-end, and mobile software development has enhanced my capacity to innovate, positioning me to bring a refreshed, technically advanced perspective to supplier quality management.
+      After refining my technical expertise in supplier quality, I expanded my skill set into software development. This has enabled me to create and implement solutions that automate tasks, simplify processes, and standardize operations—adding significant value to my Supplier Quality Engineer duties by enabling me to perform my job more efficiently. My ability to apply analytical and problem-solving capabilities across front-end, back-end, and mobile software development has enhanced my capacity to innovate, positioning me to bring a refreshed, technically advanced perspective to supplier quality management.
     </p>
     <p>
       I am eager to re-enter the Supplier Quality Management and Development field with a renewed focus on implementing data-driven solutions and leveraging technology to enhance quality control processes.
@@ -45,5 +168,20 @@
     <p>Sincerely,</p>
     <p>Walter Eli Bernal Montero</p>
   </footer>
+
+  <script>
+    const handleInputChange = (event, fieldName) => {
+      const inputElement = document.getElementById(fieldName)
+      const value = event.target.value
+
+      inputElement.value = value
+      inputElement.style.width = (value.length) + 1 + "ch"
+      
+      const measurer = document.getElementById('text-measurer')
+      measurer.innerText = value || inputElement.placeHolder
+
+      inputElement.style.width = measurer.offsetWidth + 'px'
+    }
+  </script>
 </body>
 </html>
