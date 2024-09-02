@@ -89,7 +89,7 @@ main {
 }
 
 aside {
-  width: 33%;
+  width: 37%;
   margin-right: 5px;
   margin-left: 20px;
   float: left;
@@ -98,7 +98,7 @@ aside {
 }
 
 main {
-  width: 60.5%;
+  width: 56%;
   margin-right: 20px;
   float: right;
 }
@@ -257,6 +257,7 @@ main h3 {
   margin-top: 3px;
 }
 
+.certifications-section,
 .skills-section,
 .languages-section {
   display: flex;
@@ -269,6 +270,7 @@ main h3 {
   margin: 0 5px;
   margin-bottom: 5px;
 }
+.certifications-section-title,
 .skills-section-title {
   padding-left: 5px;
   text-align: start;
@@ -325,4 +327,42 @@ main h3 {
 }
 .other-experience-section-title {
   margin-bottom: 5px;
+}
+
+.badge-cert {
+  display: flex;
+  flex-direction: column;
+  height: 30px;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 4px;
+  width: auto;
+}
+.badge-cert div {
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  max-width: 100%;
+}
+.badge-cert div img {
+  height: 100%;
+  margin-right: 4px;
+}
+.badge-cert div span {
+  text-wrap: nowrap;
+  font-size: 0.9rem;
+  color: white;
+}
+.badge-sert div img,
+.badge-cert div span {
+  padding-top: 5px;
+}
+.badge-cert small{
+  font-size: 10px;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 5px;
+  color: white;
 }
