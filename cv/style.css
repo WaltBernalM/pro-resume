@@ -89,7 +89,7 @@ main {
 }
 
 aside {
-  width: 37%;
+  width: 36%;
   margin-right: 5px;
   margin-left: 20px;
   float: left;
@@ -98,7 +98,7 @@ aside {
 }
 
 main {
-  width: 56%;
+  width: 57%;
   margin-right: 20px;
   float: right;
 }
@@ -224,10 +224,15 @@ main h3 {
 }
 .contact-section-item {
   margin-bottom: 5px;
+  display: flex;
 }
-.contact-section-item span {
+.contact-section-item div {
   font-weight: 600;
   color: #28A4B3;
+  margin-right: 5px;
+}
+.contact-section-item small {
+  font-size: 0.5rem;
 }
 
 .education-section-title {
@@ -332,19 +337,21 @@ main h3 {
 .badge-cert {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 30px;
   border-radius: 5px;
   padding: 5px;
   margin: 4px;
   width: auto;
+  min-width: 20%;
+  max-width: 40%;
 }
 .badge-cert div {
   height: 14px;
-  display: flex;
+  display: flex;  
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
-  max-width: 100%;
 }
 .badge-cert div img {
   height: 100%;
@@ -352,17 +359,16 @@ main h3 {
 }
 .badge-cert div span {
   text-wrap: nowrap;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: white;
 }
-.badge-sert div img,
+.badge-cert div img,
 .badge-cert div span {
   padding-top: 5px;
 }
 .badge-cert small{
-  font-size: 8px;
+  font-size: 0.418rem;
   text-align: center;
-  margin-top: 0;
-  padding-top: 5px;
+  margin-top: 5px;
   color: white;
 }
