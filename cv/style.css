@@ -156,7 +156,7 @@ main h3 {
   font-weight: bold;
   color: #967E5A;
   padding-left: 4px;
-  border-left: 2px solid #7F7F7F;
+  border-left: 1px solid #7F7F7F;
 }
 .exp-card-subtitle {
   display: flex;
@@ -181,7 +181,6 @@ main h3 {
   flex-wrap: wrap;
 }
 .exp-task {
-  /* border: 1px solid #F2F2F2; */
   border-radius: 5px;
   padding-left: 5px;
   padding-right: 5px;
@@ -351,7 +350,7 @@ main h3 {
   margin: 4px;
   width: auto;
   min-width: 20%;
-  max-width: 43%;
+  max-width: 44%;
 }
 .badge-cert div {
   height: 14px;
