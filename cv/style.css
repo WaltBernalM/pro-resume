@@ -56,6 +56,9 @@ body {
   margin: 0 10px;
   color: #FFFFFF;
 }
+.header-title h3 {
+  font-size: 1.2rem;
+}
 
 .badge-icon {
   flex: 1;
@@ -148,7 +151,7 @@ main h3 {
 .exp-card-title-detail small {
   color: #28A4B3;
   font-weight: 600;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
 }
 .exp-card-title-detail span {
   font-size: 12px;
@@ -237,7 +240,7 @@ main h3 {
   margin-right: 5px;
 }
 .contact-section-item small {
-  font-size: 0.5rem;
+  font-size: 0.55rem;
 }
 
 .education-section-title {
