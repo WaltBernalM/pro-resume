@@ -306,10 +306,14 @@ main h3 {
   margin-top: 0;
   margin-bottom: 5px;
 }
+
 .summary-section-body {
   font-size: 13px;
   text-align: justify;
   line-height: 16px;
+}
+.summary-section-body strong {
+  font-weight: 500;
 }
 
 .experience-section {
