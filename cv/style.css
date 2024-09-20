@@ -397,3 +397,10 @@ main h3 {
   height: auto !important;
   margin-left: 3px;
 }
+
+.badge-project {
+  margin-bottom: 9px;
+}
+.projects-section-title {
+  margin-bottom: 14px;
+}
