@@ -81,7 +81,7 @@ body {
 aside,
 main {
   margin-top: 145px;
-  height: 90%;
+  height: 87%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -94,6 +94,7 @@ aside {
   float: left;
   background-color: #F2F2F2;
   border-radius: 5px;
+  justify-content: space-evenly;
 }
 
 main {
@@ -281,6 +282,7 @@ main h3 {
 .projects-section {
   margin: 0 5px;
   margin-bottom: 5px;
+  margin-top: 18px;
 }
 .certifications-section-title,
 .skills-section-title,
@@ -302,7 +304,7 @@ main h3 {
 }
 
 .summary-section {
-  padding-bottom: 28px;
+  margin-bottom: 18px;
 }
 .summary-section-title {
   margin-top: 0;
@@ -319,6 +321,9 @@ main h3 {
 
 .experience-section {
   width: 100%;
+}
+.experience-section .exp-card {
+  padding-bottom: 0;
 }
 .experience-section-title {
   margin-bottom: 5px;
@@ -341,7 +346,7 @@ main h3 {
 }
 
 .other-experience-section {
-  margin-top: 28px;
+  margin-top: 18px;
 }
 .other-experience-section-title {
   margin-bottom: 5px;
@@ -398,9 +403,8 @@ main h3 {
   margin-left: 3px;
 }
 
-.badge-project {
-  margin-bottom: 9px;
-}
 .projects-section-title {
-  margin-bottom: 14px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  margin-top: 0;
 }
