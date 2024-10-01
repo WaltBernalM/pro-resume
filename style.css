@@ -186,6 +186,9 @@ main h3 {
   margin: 1px 0 3px 0;
   background-color: #F2F2F2;
 }
+.exp-task strong {
+  font-weight: 600;
+}
 
 #break-tooltip {
   position: absolute;
@@ -384,7 +387,7 @@ main h3 {
   padding-top: 5px;
 }
 .badge-cert small{
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   text-align: center;
   margin-top: 5px;
   color: white;
@@ -407,4 +410,13 @@ main h3 {
   margin-bottom: 5px;
   padding-bottom: 5px;
   margin-top: 0;
+}
+
+.badge-project {
+  height: 35px;
+  margin: 0;
+  margin-bottom: 4px;
+}
+.badge-project-desc {
+  padding-top: 5px;
 }
