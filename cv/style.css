@@ -30,11 +30,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #EBF0FB;
+  background-color: #E9C2AD;
 }
 .header-img-container img {
   width: 100%;
-  height: 100%;
   object-fit: contain;
   object-position: center;
 }
@@ -60,9 +59,10 @@ body {
   font-size: 1.2rem;
 }
 
-.badge-icon {
+.badge-icon,
+.badge-icon div {
   flex: 1;
-  height: 14px;
+  height: 11px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,16 +70,31 @@ body {
   padding: 5px;
   margin: 4px;
 }
-.badge-icon img {
+.badge-icon img,
+.badge-icon div img {
   height: 100%;
   margin-right: 8px;
 }
-.badge-icon span {
+.badge-icon span,
+.badge-icon div span {
   text-wrap: nowrap;
-  font-size: 0.9rem;
+  font-size: 14px;
   color: white;
 }
-
+.cert-icon {
+  flex-direction: column;
+  height: 22px !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.cert-icon div {
+  margin: 0;
+  padding: 0;
+}
+.cert-icon-footer span {
+  font-size: 8px !important;
+  padding-top: 6px;
+}
 
 aside,
 main {
@@ -144,8 +159,7 @@ main h3 {
 .exp-card-title-detail h5 {
   padding: 0;
   margin: 0;
-  font-size: 1rem;
-  margin-right: 4px;
+  font-size: 14px;
   color: #28A4B3
 }
 .exp-card-title-detail small {
@@ -162,15 +176,8 @@ main h3 {
   border-left: 1px solid #7F7F7F;
 }
 .exp-card-subtitle {
-  display: flex;
-  align-items: center;
-  color: #7F7F7F;
-  font-size: 12px;
-}
-.exp-card-subtitle span:nth-child(2) {
-  border-left: 1px solid #7F7F7F;
-  padding-left: 4px;
-  margin-left: 4px;
+  color: #7F7F7F !important;
+  font-size: 8px !important;
 }
 .exp-tasks-container {
   font-size: small;
@@ -179,9 +186,11 @@ main h3 {
   padding-left: 0px;
   margin-bottom: 0;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
+  font-weight: 500;
 }
 .exp-task {
   border-radius: 5px;
@@ -233,6 +242,7 @@ main h3 {
 .contact-section-item {
   margin-bottom: 5px;
   display: flex;
+  font-weight: 500;
 }
 .contact-section-item div {
   font-weight: 600;
@@ -263,11 +273,11 @@ main h3 {
   font-size: 14px;
 }
 .education-section-item-subtitle {
-  font-size: 12px;
+  font-size: 14px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  margin-top: 3px;
+  font-weight: 500;
 }
 
 .certifications-section,
@@ -320,7 +330,7 @@ main h3 {
   width: 100%;
 }
 .experience-section-title {
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 .experience-section ul {
   font-size: small;
@@ -343,41 +353,3 @@ main h3 {
   margin-bottom: 5px;
 }
 
-.badge-cert {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 28px;
-  border-radius: 5px;
-  padding: 4px;
-  margin: 4px;
-  width: auto;
-  min-width: 20%;
-  max-width: 45%;
-}
-.badge-cert div {
-  height: 14px;
-  display: flex;  
-  justify-content: center;
-  align-items: center;
-}
-.badge-cert div img {
-  height: 100%;
-  margin-right: 4px;
-}
-.badge-cert div span {
-  text-wrap: nowrap;
-  font-size: 0.8rem;
-  color: white;
-}
-.badge-cert div img,
-.badge-cert div span {
-  padding-top: 5px;
-}
-.badge-cert small{
-  font-size: 0.418rem;
-  text-align: center;
-  margin-top: 5px;
-  color: white;
-}
