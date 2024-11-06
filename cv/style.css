@@ -11,18 +11,41 @@ body {
   margin: 0;
 }
 
+header {
+  height: 156px;
+}
+
 .header {
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: space-between;
   margin: 0px;
+  position: relative;
 }
-.header-img-container {
-  position: absolute; z-index: 1;
-  left: 115px;
-  top: 6px;
-  width: 120px;
+.header-img-box {
+  position:relative;
+  width: 37%;
+  margin-left: 20px;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header-title-box {
+  position: relative;
+  width: 56%;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
 
+.header-img-container {
+  z-index: 1;
+  width: 120px;
   overflow: hidden;
   border-radius: 50%;
   border: 10px solid #967E5A;
@@ -38,15 +61,12 @@ body {
 }
 .header-title {
   background-color: #967E5A;
-  width: 75%;
+  width: 130%;
   height: 90px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-evenly;
-  position: absolute;
-  top: 31px;
-  margin-right: 20px;
   border-radius: 10px;
 }
 .header-title h1,
@@ -97,8 +117,6 @@ body {
 
 aside,
 main {
-  margin-top: 5px;
-  margin-top: 166px;
   height: 90%;
   display: flex;
   flex-direction: column;
@@ -202,7 +220,7 @@ main h3 {
 }
 
 .exp-break-card {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 .break-tooltip {
   position: absolute;
