@@ -127,29 +127,21 @@ main h3 {
 .exp-card {
   position: relative;
   padding: 5px 0;
-}
-.exp-card-break {
-  padding: 0;
-}
-.exp-card-break:last-child {
-  padding-top: 5px;
-  padding-bottom: 0;
-}
-.exp-break-card {
   position: relative;
   padding: 5px;
-  border: 2px solid #3594BA;
+  border: 2px solid #967E5A;
   border-radius: 5px;
 }
-.exp-break-card ul {
-  margin-bottom: 0;
-}
+
 .exp-card-title {
   display: flex; 
   align-items: flex-end; 
   justify-content: space-between;
   margin-bottom: 2px;
   padding-right: 5px;
+}
+.exp-card-title-inner {
+  margin-top: 5px;
 }
 .exp-card-title-detail {
   display: flex;
@@ -169,10 +161,10 @@ main h3 {
 .exp-card-title-detail span {
   font-size: 12.5px;
   margin-left: 4px;
-  font-weight: bold;
-  color: #967E5A;
+  font-weight: 600;
   padding-left: 4px;
   border-left: 1px solid #7F7F7F;
+  margin-bottom: 1px;
 }
 .exp-card-title-detail-sub {
   font-weight: 600 !important;
@@ -209,16 +201,31 @@ main h3 {
   font-size: 15px;
 }
 
-#break-tooltip {
+.exp-break-card {
+  margin-bottom: 20px;
+}
+.break-tooltip {
   position: absolute;
-  right: 10px;
-  top: -12px;
+  right: 5px;
+  top: -13px;
   font-size: x-small;
   z-index: 1;
   background-color: white;
-  padding: 4px;
-  font-weight: bold;
-  color: #3594BA;
+  font-weight: 600;
+  font-size: 12px;
+  border: 2px solid #967E5A;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.break-tooltip div {
+  margin: 0;
+  padding: 2px 6px;
+}
+.company-tooltip {
+  border-right: 2px solid #967E5A;
 }
 
 .section-title {
@@ -340,7 +347,7 @@ main h3 {
   width: 100%;
 }
 .experience-section-title {
-  margin-bottom: 0px;
+  margin-bottom: 5px;
 }
 .experience-section ul {
   font-size: small;
