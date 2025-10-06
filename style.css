@@ -1,5 +1,5 @@
 html {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: sans-serif, system-ui, -apple-system;
   padding: 0;
   margin: 0;
 }
@@ -71,12 +71,17 @@ header {
   border-radius: 10px;
 }
 .header-title h1,
-.header-title h3 {
+.header-title h3,
+.header-title h5 {
   margin: 0 10px;
   color: #FFFFFF;
 }
 .header-title h3 {
   font-size: 22px;
+}
+.header-title h5 {
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .badge-icon,
@@ -88,7 +93,7 @@ header {
   align-items: center;
   border-radius: 5px;
   padding: 5px;
-  margin: 4px;
+  margin: 3px;
 }
 .badge-icon img,
 .badge-icon div img {
@@ -98,7 +103,7 @@ header {
 .badge-icon span,
 .badge-icon div span {
   text-wrap: nowrap;
-  font-size: 13px;
+  font-size: 12px;
   color: white;
 }
 .cert-icon {
@@ -148,7 +153,7 @@ main h3 {
   padding: 5px 0;
   position: relative;
   padding: 5px;
-  padding-top: 10px;
+  padding-top: 15px;
   border: 2px solid #967E5A;
   border-radius: 5px;
 }
@@ -176,7 +181,6 @@ main h3 {
 .exp-card-title-detail small {
   color: #28A4B3;
   font-weight: 600;
-  font-size: 0.55rem;
 }
 .exp-card-title-detail span {
   font-size: 10px;
@@ -195,12 +199,8 @@ main h3 {
 .exp-card-title-detail-sub span {
   color: #6f5d43;
 }
-.exp-card-subtitle {
-  color: #4e4e4e !important;
-  font-size: 8px !important;
-}
 .exp-tasks-container {
-  font-size: small;
+  font-size: 12px;
   text-align: left;
   margin-top: 0;
   padding-left: 0px;
@@ -218,7 +218,6 @@ main h3 {
   padding-right: 5px;
   margin: 1px 0 3px 0;
   background-color: #F2F2F2;
-  font-size: 13px;
 }
 
 .exp-break-card {
@@ -231,7 +230,6 @@ main h3 {
   position: absolute;
   right: 5px;
   top: -11px;
-  font-size: x-small;
   z-index: 1;
   background-color: white;
   font-weight: 600;
@@ -290,7 +288,7 @@ main h3 {
   margin-right: 5px;
 }
 .contact-section-item span {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .education-section-title {
@@ -313,7 +311,7 @@ main h3 {
   font-size: 16px;
 }
 .education-section-item-subtitle {
-  font-size: 15px;
+  font-size: 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -358,7 +356,7 @@ main h3 {
 }
 
 .summary-section-body {
-  font-size: 13px;
+  font-size: 12px;
   text-align: justify;
   line-height: 16px;
 }
@@ -373,7 +371,6 @@ main h3 {
   margin-bottom: 5px;
 }
 .experience-section ul {
-  font-size: small;
   text-align: left;
   margin-top: 0;
   list-style-position: outside;
