@@ -190,15 +190,7 @@ main h3 {
   border-left: 1px solid #7F7F7F;
   margin-bottom: 1px;
 }
-.exp-card-title-detail-sub {
-  font-weight: 600 !important;
-}
-.exp-card-title-detail-sub h5 {
-  color: #1b737d;
-}
-.exp-card-title-detail-sub span {
-  color: #6f5d43;
-}
+
 .exp-tasks-container {
   font-size: 12px;
   text-align: left;
@@ -382,11 +374,3 @@ main h3 {
   border-radius: 5px;
   margin-bottom: 3px;
 }
-
-.other-experience-section {
-  margin-top: 28px;
-}
-.other-experience-section-title {
-  margin-bottom: 5px;
-}
-
