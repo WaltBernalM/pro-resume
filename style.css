@@ -151,8 +151,6 @@ main h3 {
 
 .exp-card {
   position: relative;
-  padding: 5px 0;
-  position: relative;
   padding: 5px;
   padding-top: 15px;
   border: 2px solid #967E5A;
@@ -253,7 +251,6 @@ main h3 {
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-top: 10px;
   margin: 0 5px;
   margin-bottom: 5px;
   padding-top: 0px;
