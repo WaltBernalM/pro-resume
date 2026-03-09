@@ -95,6 +95,10 @@ header {
   border-radius: 5px;
   padding: 5px;
   margin: 3px;
+  background-color: #28A4B3;
+}
+.badge-icon img {
+  filter: brightness(1) invert(0) grayscale(100%) contrast(100%);
 }
 .badge-icon img,
 .badge-icon div img {
